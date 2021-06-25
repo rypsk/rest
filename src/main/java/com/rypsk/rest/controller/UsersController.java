@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rypsk.rest.model.Users;
+import com.rypsk.rest.model.User;
 import com.rypsk.rest.repository.UsersRepository;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/user")
 public class UsersController {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
@@ -27,27 +27,27 @@ public class UsersController {
 	}
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public List<Users> getAllUsers() {
+	public List<User> getAllUsers() {
 		LOG.info("Getting all users.");
 		return usersRepository.findAll();
 	}
 
-	@RequestMapping(value = "/{nif}", method = RequestMethod.GET)
-	public Optional<Users> getUser(@PathVariable String nif) {
-		LOG.info("Getting user with ID: {}.", nif);
-		return usersRepository.findById(nif);
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public Optional<User> getUser(@PathVariable String id) {
+		LOG.info("Getting user with ID: {}.", id);
+		return usersRepository.findById(id);
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public Users addUser(@RequestBody Users user) {
+	public User addUser(@RequestBody User user) {
 		LOG.info("Saving user.");
 		return usersRepository.save(user);
 	}
 	
-	@RequestMapping(value = "/delete/{nif}", method = RequestMethod.DELETE)
-	public void deleteUser(@RequestBody String nif) {
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	public void deleteUser(@RequestBody String id) {
 		LOG.info("Delete user.");
-		usersRepository.deleteById(nif);
+		usersRepository.deleteById(id);
 	}
 
 }
