@@ -1,4 +1,4 @@
-package com.rypsk.rest.controller;
+package com.rypsk.rest.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rypsk.rest.model.User;
-import com.rypsk.rest.repository.UsersRepository;
+import com.rypsk.rest.models.User;
+import com.rypsk.rest.repositories.UserRepository;
 
 @RestController
 @RequestMapping(value = "/api/user")
-public class UsersController {
+public class UserController {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
-	private final UsersRepository usersRepository;
+	private final UserRepository usersRepository;
 	
-	public UsersController(UsersRepository usersRepository) {
+	public UserController(UserRepository usersRepository) {
 		this.usersRepository = usersRepository;
 	}
 

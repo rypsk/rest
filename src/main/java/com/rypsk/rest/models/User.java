@@ -1,4 +1,4 @@
-package com.rypsk.rest.model;
+package com.rypsk.rest.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -8,12 +8,10 @@ public class User {
 
 	@Id
 	private String id;
-	private String user;
 	private String password;
-	private String nif;
+	private String email;
 	private String name;
 	private String lastName;
-	private int age;
 	private String role;
 
 	public String getId() {
@@ -24,14 +22,6 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -40,12 +30,12 @@ public class User {
 		this.password = password;
 	}
 
-	public String getNif() {
-		return nif;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setNif(String nif) {
-		this.nif = nif;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getName() {
@@ -62,14 +52,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public String getRole() {
