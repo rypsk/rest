@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.rypsk.rest.repositories.UserRepository;
 
 @RestController
 @RequestMapping(value = "/api/user")
+//@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class UserController {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
