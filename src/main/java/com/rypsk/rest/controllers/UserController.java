@@ -17,7 +17,6 @@ import com.rypsk.rest.repositories.UserRepository;
 
 @RestController
 @RequestMapping(value = "/api/user")
-//@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class UserController {
 
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
